@@ -58,7 +58,11 @@ private[spark] class UnionPartition[T: ClassTag](
     if (parentRddPartitionIndex < rdd.partitions.length) {
       parentPartition = rdd.partitions(parentRddPartitionIndex)
     } else {
-      parentPartition = rdd.partitions(0)
+      if (rdd.partitions.length == 0) {
+        parentPartition = null
+      } else {
+        parentPartition = rdd.partitions(0)
+      }
     }
     oos.defaultWriteObject()
   }

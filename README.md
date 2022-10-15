@@ -17,6 +17,8 @@ This manual is structured on the assumption that the following environment has b
 ##### (0) Testing environment.
 Each machine of the cluster has Intel Xeon E5-2450 CPU with 16 cores and 192 GB of RAM.
 On the software side, we installed Spark 3.0 and Hadoop 2.7.7 on Ubuntu 20.04.3 LTS.
+Please keep the disk usage rate not exceeding 80% before the execution.
+Otherwise, it is impossible to initialize Spark.
 
 ##### (1) Code execution location.
 The codes to be executed are written in a code block and have the following format.
