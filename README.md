@@ -276,11 +276,11 @@ All three scripts below generate result files named '${method}-d-${dataset}-p-${
 
 2. QaaD/scripts/exp-partition-size.sh: a script for the experiment varying the number of input partitions
 ```
-[master-docker]$ cd ~/QaaD/scripts; exp-partition-size.sh [PATH_TO_OUTPUT_DIR]
+[master-docker]$ cd ~/QaaD/scripts; ./exp-partition-size.sh [PATH_TO_OUTPUT_DIR]
 ```
 
 3. QaaD/scripts/exp-dataset-size.sh: a script for the experiment varying the dataset sizes
 ```
-[master-docker]$ cd ~/QaaD/scripts; exp-dataset-size.sh [PATH_TO_OUTPUT_DIR]
+[master-docker]$ cd ~/QaaD/scripts; ./exp-dataset-size.sh [PATH_TO_OUTPUT_DIR]
 ```
 
