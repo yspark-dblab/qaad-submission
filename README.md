@@ -76,26 +76,32 @@ This step is the process of downloading the configuration file, creating a Docke
 
 2. Download two datasets (i.e., BRA and eBay datasets) on `QaaD/datasets`.
 
-- BRA dataset: [link](https://drive.google.com/drive/folders/1sJXnzc4BUqfU0-P6my7Xsb6ZYaheC2qC?usp=sharing)
+- Download [BRA dataset directory](https://drive.google.com/drive/folders/1sJXnzc4BUqfU0-P6my7Xsb6ZYaheC2qC?usp=sharing) on `QaaD/datasets`
 
-- eBay dataset: [link](https://drive.google.com/drive/folders/16p3vF-tPsSzmVQj2Xg_31Fe9Tvf8PeBP?usp=sharing)
+- Download [eBay dataset directory](https://drive.google.com/drive/folders/16p3vF-tPsSzmVQj2Xg_31Fe9Tvf8PeBP?usp=sharing) on `QaaD/datasets`
 
-3. Download the master docker image [base-image-master.tar](https://drive.google.com/file/d/15zpJUCLjk--bhMqd_oYo2IES7hVVQS9-/view?usp=sharing) and load the docker image.
+3. Download two query sets and their parameters on `QaaD/querysets`
+
+- Download [brazilian-ecommerce directory](https://drive.google.com/drive/folders/1WFddeCYADEZtQiI1WyjZRB7kU8cTZy7A?usp=sharing) on `QaaD/querysets`
+
+- Download [eBay directory](https://drive.google.com/drive/folders/1ZkbhEUqSjfF-kxksr7apMVzFnSexa9I6?usp=sharing) on `QaaD/querysets`
+
+4. Download the master docker image [base-image-master.tar](https://drive.google.com/file/d/15zpJUCLjk--bhMqd_oYo2IES7hVVQS9-/view?usp=sharing) and load the docker image.
 ```
 [master]$ docker load < base-image-master.tar
 ```
 
-4. Run the docker container. (Here, users put the path of the repository into `PATH_TO_DIR`)
+5. Run the docker container. (Here, users put the path of the repository into `PATH_TO_DIR`)
 ```
 [master]$ docker run -itd --privileged -h master -v PATH_TO_DIR:/root/QaaD --name master --net spark-cluster-net base-image-master
 ```
 
-5. Enter the docker container.
+6. Enter the docker container.
 ```
 [master]$ docker exec -it master /bin/bash
 ```
 
-6. Enter the following commands and exit the docker container.
+7. Enter the following commands and exit the docker container.
 ```
 [master-docker]$ /root/init.sh  
 [master-docker]$ exit

@@ -1,1 +1,1 @@
-Download the datasets via external links provided in ~/QaaD/README.md
+Download the datasets on this directory according to the manual (~/QaaD/README.md).
