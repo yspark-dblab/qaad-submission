@@ -57,14 +57,8 @@ private[spark] class UnionPartition[T: ClassTag](
     // Update the reference to parent split at the time of task serialization
     if (parentRddPartitionIndex < rdd.partitions.length) {
       parentPartition = rdd.partitions(parentRddPartitionIndex)
-    } else {
-      if (rdd.partitions.length == 0) {
-        parentPartition = null
-      } else {
-        parentPartition = rdd.partitions(0)
-      }
+      oos.defaultWriteObject()
     }
-    oos.defaultWriteObject()
   }
 }
 
